@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html lang="so" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Savora Restaurant Management System - Nidaamka Casriga ah ee Maamulka Maqaayadda Savora">
+  <title>Savora Restaurant Management System | Nidaamka Maamulka Maqaayadda</title>
+  
+  <!-- FontAwesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Local Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===================================================================
+       1. QAYBTA GUUD EE MACMIILKA (CUSTOMER FACING PUBLIC SITE)
+  =================================================================== -->
+  <div id="customerView" class="customer-view-wrapper">
+    
+    <!-- Navbar (Madaxa Bogga) -->
+    <header class="main-navbar" id="mainNavbar">
+      <div class="nav-container">
+        <!-- Logo -->
+        <a href="#hero" class="brand-logo">
+          <div class="logo-icon">
+            <i class="fa-solid fa-utensils"></i>
+          </div>
+          <div class="brand-title-wrap">
+            <div class="brand-name">SAVORA <span>RESTAURANT</span></div>
+            <div class="brand-tagline">Nidaamka Casriga ah ee Maqaayadda</div>
+          </div>
+        </a>
+
+        <!-- Links -->
+        <nav class="nav-links" id="navLinks">
+          <a href="#hero" class="nav-item active"><i class="fa-solid fa-house"></i> Bogga Hore</a>
+          <a href="#menu" class="nav-item"><i class="fa-solid fa-bowl-food"></i> Liiska Cuntada</a>
+          <a href="#services" class="nav-item"><i class="fa-solid fa-bell-concierge"></i> Adeegyada</a>
+          <a href="#reservation" class="nav-item"><i class="fa-solid fa-chair"></i> Qabso Miis</a>
+          <a href="#reviews" class="nav-item"><i class="fa-solid fa-star"></i> Faallooyinka</a>
+          <a href="#contact" class="nav-item"><i class="fa-solid fa-phone"></i> Xiriirka</a>
+        </nav>
+
+        <!-- Actions -->
+        <div class="nav-actions">
+          <!-- Dark Mode Toggle -->
+          <button class="btn-icon theme-toggle-btn" id="themeToggleBtn" title="Beddel Muuqaalka (Mugdi / Iftiin)">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+
+          <!-- Cart Button -->
+          <div class="cart-btn-wrap">
+            <button class="btn-icon" id="openCartBtn" title="Eeg Dalabkaaga">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span class="cart-badge" id="cartBadge">0</span>
+            </button>
+          </div>
+
+          <!-- Switch to Admin Dashboard -->
+          <button class="admin-toggle-btn" id="goToAdminBtn">
+            <i class="fa-solid fa-chart-pie"></i>
+            <span>Qaybta Maamulka</span>
+          </button>
+
+          <!-- Mobile Nav Toggle -->
+          <button class="mobile-nav-toggle" id="mobileNavToggle" title="Fur Liiska">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section (Bogga Hore) -->
+    <section class="hero-section" id="hero">
+      <div class="hero-pattern"></div>
+      <div class="hero-container">
+        
+        <!-- Text Details -->
+        <div class="hero-text-content">
+          <div class="hero-badge-top">
+            <i class="fa-solid fa-crown"></i> Cunto Tayo Sare Leh &amp; Dhadhan Dhab Ah
+          </div>
+          <h1 class="hero-title">
+            Khibrad Cunto oo Cajiib ah &amp; <span>Soo Dhaweyn Heer Sare ah</span>
+          </h1>
+          <p class="hero-desc">
+            Ku soo dhawoow Maqaayadda Casriga ah ee Savora. Waxaan kuu diyaarinay cuntooyin tayo sare leh, macaan oo caafimaad leh, iyo goob raaxo leh oo loogu talagalay adiga, asxaabtaada iyo qoyskaaga.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#menu" class="btn btn-gold btn-lg">
+              <i class="fa-solid fa-bowl-food"></i> Eeg Cuntooyinka
+            </a>
+            <a href="#reservation" class="btn btn-outline-gold btn-lg">
+              <i class="fa-solid fa-calendar-check"></i> Qabso Miis Hadda
+            </a>
+            <button class="btn btn-primary btn-lg" id="heroOrderNowBtn">
+              <i class="fa-solid fa-bag-shopping"></i> Dalbo Hadda
+            </button>
+          </div>
+
+          <div class="hero-features">
+            <div class="feature-pill">
+              <div class="feature-pill-icon"><i class="fa-solid fa-check"></i></div>
+              <div class="feature-pill-text">100% Cunto Nadiif ah</div>
+            </div>
+            <div class="feature-pill">
+              <div class="feature-pill-icon"><i class="fa-solid fa-motorcycle"></i></div>
+              <div class="feature-pill-text">Gaarsiin Degdeg ah</div>
+            </div>
+            <div class="feature-pill">
+              <div class="feature-pill-icon"><i class="fa-solid fa-star"></i></div>
+              <div class="feature-pill-text">4.9/5 Qiimeynta Macaamiisha</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual (Signature Card) -->
+        <div class="hero-visual">
+          <div class="hero-dish-card">
+            <img src="assets/images/hero-dish.jpg" alt="Hilib Ari Duban oo Firiirixsan" class="hero-dish-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80';">
+            <div class="hero-dish-info">
+              <span class="hero-dish-badge">★ Cuntada Maanta Ugu Caansan</span>
+              <h3 class="hero-dish-name">Hilib Ari Duban oo Firiirixsan</h3>
+              <p style="color: #cadfd4; font-size: 0.88rem;">Hilib ari curdan ah oo lagu dubay xawaashka gaarka ah ee Savora, oo leh bariis udgoon iyo maraq.</p>
+              <div class="hero-dish-row">
+                <span class="hero-dish-price">$14.50</span>
+                <button class="btn btn-gold btn-sm" onclick="app.quickOrderSpecial()">
+                  <i class="fa-solid fa-cart-plus"></i> Ku dar Dalabka
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Stat Badge -->
+          <div class="hero-floating-stat">
+            <div class="floating-icon">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <div>
+              <div class="floating-stat-num">#1 Maqaayadda</div>
+              <div class="floating-stat-label">Ugu Fiican Sanadkan 2026</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Stats Strip (Tirakoobka Degdegga ah) -->
+    <section class="stats-strip">
+      <div class="stats-strip-container">
+        <div class="stat-item">
+          <div class="stat-item-icon"><i class="fa-solid fa-users"></i></div>
+          <div>
+            <div class="stat-item-num" id="statCustomersCount">2,500+</div>
+            <div class="stat-item-label">Macaamiil Ku Qanacsan</div>
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item-icon"><i class="fa-solid fa-utensils"></i></div>
+          <div>
+            <div class="stat-item-num" id="statMenuItemsCount">45+</div>
+            <div class="stat-item-label">Cuntooyin Kala Duwan</div>
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item-icon"><i class="fa-solid fa-chair"></i></div>
+          <div>
+            <div class="stat-item-num" id="statTablesCount">15+</div>
+            <div class="stat-item-label">Miisas Raaxo Leh</div>
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+          <div>
+            <div class="stat-item-num">8+</div>
+            <div class="stat-item-label">Sano oo Khibrad ah</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured / Popular Dishes Section (Cuntooyinka Ugu Caansan) -->
+    <section class="section" id="popularDishesSection" style="background: var(--bg-surface);">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-tag">★ Xulashada Gaarka Ah</span>
+          <h2 class="section-title">Cuntooyinka Loogu Jecel Yahay Savora</h2>
+          <p class="section-subtitle">Ku raaxayso cuntooyinka macaamiisheennu sida joogtada ah u doortaan ee dhadhanka gaarka ah leh.</p>
+        </div>
+
+        <div class="food-grid" id="popularFoodGrid">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Liiska Cuntada Section (Food Menu) -->
+    <section class="section" id="menu">
+      <div class="section-container">
+        
+        <div class="section-header">
+          <span class="section-tag">★ DHADHAN KALA DUWAN</span>
+          <h2 class="section-title">Liiska Cuntada ee Savora</h2>
+          <p class="section-subtitle">Dooro cuntooyinka aad jeceshahay ee sida gaarka ah loogu diyaariyey xirfad iyo nadaafad heer sare ah.</p>
+        </div>
+
+        <!-- Controls: Search & Category Filter Pills -->
+        <div class="menu-controls">
+          <div class="menu-search-row">
+            <div class="search-input-wrap">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" id="menuSearchInput" placeholder="Raadi cunto kasta (tusaale: Bariis, Pizza, Kalluun, Burger...)" autocomplete="off">
+            </div>
+            
+            <div style="display: flex; gap: 10px; align-items: center;">
+              <select id="menuAvailabilityFilter" class="form-control" style="width: auto; min-width: 170px;">
+                <option value="all">Dhammaan Cuntooyinka</option>
+                <option value="available">La heli karo keliya</option>
+                <option value="unavailable">Waa dhammaatay keliya</option>
+              </select>
+
+              <!-- Quick Add Food button -->
+              <button class="btn btn-gold btn-sm" onclick="app.openFoodModal()">
+                <i class="fa-solid fa-plus"></i> Ku dar Cunto Cusub
+              </button>
+            </div>
+          </div>
+
+          <!-- Category Pills -->
+          <div class="category-pills" id="categoryPills">
+            <button class="cat-pill active" data-category="all"><i class="fa-solid fa-border-all"></i> Dhammaan</button>
+            <button class="cat-pill" data-category="quraac"><i class="fa-solid fa-egg"></i> Quraac</button>
+            <button class="cat-pill" data-category="qado"><i class="fa-solid fa-sun"></i> Qado</button>
+            <button class="cat-pill" data-category="casho"><i class="fa-solid fa-moon"></i> Casho</button>
+            <button class="cat-pill" data-category="bariis-baasto"><i class="fa-solid fa-bowl-rice"></i> Bariis iyo Baasto</button>
+            <button class="cat-pill" data-category="hilib-digaag"><i class="fa-solid fa-drumstick-bite"></i> Hilib iyo Digaag</button>
+            <button class="cat-pill" data-category="kalluun"><i class="fa-solid fa-fish"></i> Kalluun</button>
+            <button class="cat-pill" data-category="burger-pizza"><i class="fa-solid fa-pizza-slice"></i> Burger iyo Pizza</button>
+            <button class="cat-pill" data-category="cabitaanno"><i class="fa-solid fa-glass-water"></i> Cabitaanno</button>
+            <button class="cat-pill" data-category="macmacaan"><i class="fa-solid fa-cake-candles"></i> Macmacaan</button>
+          </div>
+        </div>
+
+        <!-- Food Items Grid -->
+        <div class="food-grid" id="mainFoodGrid">
+          <!-- Populated by JavaScript -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Adeegyada Maqaayadda (Services) -->
+    <section class="section" id="services" style="background: var(--bg-surface);">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-tag">★ MAXAAN KUU QABANNAA?</span>
+          <h2 class="section-title">Adeegyada Maqaayadda Savora</h2>
+          <p class="section-subtitle">Waxaan bixinnaa adeegyo dhameystiran oo loogu talagalay in lagu qanciyo qof kasta oo na soo booqda.</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon-box"><i class="fa-solid fa-utensils"></i></div>
+            <h3 class="service-title">Cunto Cunis Goobta Ah</h3>
+            <p class="service-desc">Goob raaxo leh, nadiif ah, jawi deggen iyo shaqaale tababaran oo si sharaf leh kuu soo dhaweynaya.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon-box"><i class="fa-solid fa-truck-fast"></i></div>
+            <h3 class="service-title">Gaarsiin Degdeg Ah</h3>
+            <p class="service-desc">Dalbo cuntada aad jeceshahay, waxaanan kuugu keenaynaa gurigaaga ama goobtaada shaqada iyadoo kulul oo diyaar ah.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon-box"><i class="fa-solid fa-champagne-glasses"></i></div>
+            <h3 class="service-title">Qado Sharaf &amp; Munaasabado</h3>
+            <p class="service-desc">Diyaargarow buuxa oo loogu talagalay xafladaha meherka, dhalashada, kulamada shirkadaha iyo martiqaadyada gaarka ah.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon-box"><i class="fa-solid fa-gem"></i></div>
+            <h3 class="service-title">Kuraas &amp; Miisas VIP Ah</h3>
+            <p class="service-desc">Qolal gaar ah oo loogu talagalay dadka doonaya xasilooni dheeraad ah, shirar gaar ah iyo qoysaska.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Qabsashada Miisaska (Reservation Section) -->
+    <section class="section reservation-section" id="reservation">
+      <div class="section-container">
+        
+        <div class="section-header">
+          <span class="section-tag">★ BALAN QABSO HADDABA</span>
+          <h2 class="section-title">Qabso Miis Maqaayadda Savora</h2>
+          <p class="section-subtitle">Hubso miiskaaga adigoon saf gelin. Dooro miiska iyo waqtiga kugu habboon.</p>
+        </div>
+
+        <div class="reservation-grid">
+          
+          <!-- Banner & Info Card -->
+          <div class="res-banner-card">
+            <img src="assets/images/restaurant-tables.jpg" alt="Miisaska Maqaayadda Savora" class="res-banner-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=900&q=80';">
+            <div class="res-banner-overlay">
+              <span class="badge badge-gold" style="margin-bottom: 10px;">★ Fadhiga Macaamiisha</span>
+              <h3>Jawi Qurux Badan &amp; Nadiif Ah</h3>
+              <p>Waxaan leenahay miisas kala duwan oo qaada 2 qof, 4 qof, 6 qof iyo qolal gaar ah oo VIP ah. Dooro miiska kugu habboon.</p>
+            </div>
+          </div>
+
+          <!-- Reservation Form -->
+          <div class="res-form-card">
+            <form id="publicReservationForm">
+              <div class="form-grid">
+                
+                <div class="form-group">
+                  <label for="resCustName"><i class="fa-solid fa-user"></i> Magacaaga oo Buuxa *</label>
+                  <input type="text" id="resCustName" class="form-control" placeholder="Tusaale: Faarax Cali Warsame" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="resCustPhone"><i class="fa-solid fa-phone"></i> Lambarka Telefoonka *</label>
+                  <input type="tel" id="resCustPhone" class="form-control" placeholder="Tusaale: +252 61 555 4321" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="resGuestsCount"><i class="fa-solid fa-users"></i> Tirada Dadka *</label>
+                  <select id="resGuestsCount" class="form-control" required>
+                    <option value="1">1 Qof</option>
+                    <option value="2" selected>2 Qof (Laba qof)</option>
+                    <option value="3">3 Qof</option>
+                    <option value="4">4 Qof (Qoys yar)</option>
+                    <option value="6">6 Qof</option>
+                    <option value="8">8 Qof (VIP Table)</option>
+                    <option value="12">10-12 Qof (Martiqaad)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="resTableSelect"><i class="fa-solid fa-chair"></i> Dooro Miiska *</label>
+                  <select id="resTableSelect" class="form-control" required>
+                    <!-- Populated by JavaScript with real table statuses -->
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="resDate"><i class="fa-solid fa-calendar"></i> Taariikhda *</label>
+                  <input type="date" id="resDate" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="resTime"><i class="fa-solid fa-clock"></i> Waqtiga *</label>
+                  <select id="resTime" class="form-control" required>
+                    <option value="08:00">08:00 Subaxnimo (Quraac)</option>
+                    <option value="09:30">09:30 Subaxnimo</option>
+                    <option value="12:30" selected>12:30 Duhurnimo (Qado)</option>
+                    <option value="13:30">01:30 Duhurnimo</option>
+                    <option value="15:00">03:00 Galabnimo</option>
+                    <option value="18:30">06:30 Fiidnimo (Casho)</option>
+                    <option value="20:00">08:00 Habeennimo</option>
+                    <option value="21:30">09:30 Habeennimo</option>
+                  </select>
+                </div>
+
+                <div class="form-group form-group-full">
+                  <label for="resNotes"><i class="fa-solid fa-pen-to-square"></i> Codsi Gaar ah ama Xusuusin (Ikhtiyaari)</label>
+                  <input type="text" id="resNotes" class="form-control" placeholder="Tusaale: Waxaan u baahanahay miis daaqadda u dhow ama ubax miiska saaran...">
+                </div>
+
+              </div>
+
+              <div style="display: flex; justify-content: flex-end;">
+                <button type="submit" class="btn btn-gold btn-lg" style="width: 100%;">
+                  <i class="fa-solid fa-calendar-check"></i> Xaqiiji oo Qabso Miiska Hadda
+                </button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Faallooyinka Macaamiisha (Testimonials Section) -->
+    <section class="section" id="reviews">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-tag">★ MAXAY YIRAAHDEEN?</span>
+          <h2 class="section-title">Faallooyinka Macaamiisha ee Savora</h2>
+          <p class="section-subtitle">Akhriso aragtida macaamiisha sharafta leh ee nagu soo booqday maqaayadda.</p>
+        </div>
+
+        <div class="reviews-grid">
+          
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">"Hilibka ariga iyo bariiska Savora waa kuwa ugu macaan ee aan abid cunay! Adeegga shaqaaluhu waa mid aad u sarreeya, meeshuna waa mid aad u nadiif ah oo qurux badan."</p>
+            <div class="review-author">
+              <div class="review-avatar">FC</div>
+              <div>
+                <div class="review-name">Faarax Cali Cilmi</div>
+                <div class="review-role">Macmiil Joogto ah</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">"Waxaan qabsaday miiska VIP-da xaflad qoys ah darted. Diyaargarowga, cuntada diiran iyo nadaafadda waxay ahaayeen kuwo boqolkiiba boqol naga farxiyey. Aad baad u mahadsan tihiin!"</p>
+            <div class="review-author">
+              <div class="review-avatar">LA</div>
+              <div>
+                <div class="review-name">Leyla Axmed Nuur</div>
+                <div class="review-role">Ganacsato</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">"Gaarsiinta guriga waa mid cajiib ah! Wax ka yar 25 daqiiqo ayay cuntadu ku timid iyadoo uumi baxaysa. Burger-ka iyo baastada suugada leh waa heer sare."</p>
+            <div class="review-author">
+              <div class="review-avatar">MX</div>
+              <div>
+                <div class="review-name">Maxamed Xasan Jaamac</div>
+                <div class="review-role">Macmiil Khadka ah</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Xiriirka & Saacadaha Shaqada (Contact Section) -->
+    <section class="section" id="contact" style="background: var(--bg-surface);">
+      <div class="section-container">
+        
+        <div class="section-header">
+          <span class="section-tag">★ NALA SOO XIRIIR</span>
+          <h2 class="section-title">Goobta, Telefoonka &amp; Saacadaha Shaqada</h2>
+          <p class="section-subtitle">Waxaan diyaar kuu nahay maalin kasta si aan kuu siinno adeeggii ugu wanaagsanaa.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+          
+          <div class="service-card" style="text-align: left; padding: 28px;">
+            <div style="font-size: 1.8rem; color: var(--gold); margin-bottom: 14px;"><i class="fa-solid fa-location-dot"></i></div>
+            <h3 style="font-size: 1.2rem; margin-bottom: 8px;">Cinwaanka Maqaayadda</h3>
+            <p style="color: var(--text-muted); font-size: 0.94rem; line-height: 1.6;" id="contactAddress">
+              Wadada Maka Al-Mukarama, Degmada Hodan, Muqdisho, Soomaaliya.
+            </p>
+          </div>
+
+          <div class="service-card" style="text-align: left; padding: 28px;">
+            <div style="font-size: 1.8rem; color: var(--gold); margin-bottom: 14px;"><i class="fa-solid fa-phone-volume"></i></div>
+            <h3 style="font-size: 1.2rem; margin-bottom: 8px;">Telefoonka &amp; Dalabaadka</h3>
+            <p style="color: var(--text-muted); font-size: 0.94rem; line-height: 1.6;" id="contactPhone">
+              +252 61 555 4321<br>+252 63 444 7890 (WhatsApp &amp; Call)
+            </p>
+          </div>
+
+          <div class="service-card" style="text-align: left; padding: 28px;">
+            <div style="font-size: 1.8rem; color: var(--gold); margin-bottom: 14px;"><i class="fa-solid fa-clock"></i></div>
+            <h3 style="font-size: 1.2rem; margin-bottom: 8px;">Saacadaha Shaqada</h3>
+            <p style="color: var(--text-muted); font-size: 0.94rem; line-height: 1.6;" id="contactHours">
+              Sabti - Jimce (7 Maalmood):<br>
+              <strong>06:30 Subaxnimo ilaa 11:30 Habeennimo</strong>
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer (Gunta Bogga) -->
+    <footer class="main-footer" id="mainFooter">
+      <div class="footer-container">
+        
+        <div class="footer-brand">
+          <div class="brand-logo" style="margin-bottom: 16px;">
+            <div class="logo-icon"><i class="fa-solid fa-utensils"></i></div>
+            <div class="brand-title-wrap">
+              <div class="brand-name">SAVORA <span>RESTAURANT</span></div>
+              <div class="brand-tagline">Nidaamka Casriga ah ee Maqaayadda</div>
+            </div>
+          </div>
+          <p>
+            Savora waa maqaayad casri ah oo bixisa cuntooyin tayo sare leh oo Af-Soomaali iyo caalami ah. Waxaan mudnaanta koowaad siinnaa nadaafadda, dhadhanka iyo ku qanacsanaanta macaamiisheenna.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Qaybaha Degdegga ah</h4>
+          <ul class="footer-links">
+            <li><a href="#hero"><i class="fa-solid fa-angle-right"></i> Bogga Hore</a></li>
+            <li><a href="#menu"><i class="fa-solid fa-angle-right"></i> Liiska Cuntada</a></li>
+            <li><a href="#services"><i class="fa-solid fa-angle-right"></i> Adeegyada</a></li>
+            <li><a href="#reservation"><i class="fa-solid fa-angle-right"></i> Qabso Miis</a></li>
+            <li><a href="#reviews"><i class="fa-solid fa-angle-right"></i> Faallooyinka</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Qaybaha Cuntada</h4>
+          <ul class="footer-links">
+            <li><a href="#menu" onclick="app.setCategoryFilter('bariis-baasto')"><i class="fa-solid fa-angle-right"></i> Bariis iyo Baasto</a></li>
+            <li><a href="#menu" onclick="app.setCategoryFilter('hilib-digaag')"><i class="fa-solid fa-angle-right"></i> Hilib iyo Digaag</a></li>
+            <li><a href="#menu" onclick="app.setCategoryFilter('kalluun')"><i class="fa-solid fa-angle-right"></i> Kalluunka Badda</a></li>
+            <li><a href="#menu" onclick="app.setCategoryFilter('burger-pizza')"><i class="fa-solid fa-angle-right"></i> Burger &amp; Pizza</a></li>
+            <li><a href="#menu" onclick="app.setCategoryFilter('cabitaanno')"><i class="fa-solid fa-angle-right"></i> Cabitaannada Dabiiciga ah</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Nala Soo Xiriir</h4>
+          <ul class="footer-contact">
+            <li><i class="fa-solid fa-location-dot"></i> <span>Wadada Maka Al-Mukarama, Muqdisho</span></li>
+            <li><i class="fa-solid fa-phone"></i> <span>+252 61 555 4321 / +252 63 444 7890</span></li>
+            <li><i class="fa-solid fa-envelope"></i> <span>info@savorarestaurant.so</span></li>
+            <li><i class="fa-solid fa-clock"></i> <span>06:30 Subaxnimo - 11:30 Habeennimo</span></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Savora Restaurant Management System. Dhammaan xuquuqaha way dhowran yihiin.
+        </div>
+        <div style="display: flex; gap: 14px;">
+          <button class="btn btn-sm btn-outline-gold" onclick="app.switchToAdmin()">
+            <i class="fa-solid fa-lock"></i> Galitaanka Maamulka
+          </button>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Cart Drawer & Checkout (Qaybta Dalabka Macmiilka) -->
+    <div class="cart-drawer-overlay" id="cartOverlay"></div>
+    <aside class="cart-drawer" id="cartDrawer">
+      <div class="cart-header">
+        <h3><i class="fa-solid fa-basket-shopping" style="color: var(--gold);"></i> Dalabkaaga</h3>
+        <button class="cart-close-btn" id="closeCartBtn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <div class="cart-items-list" id="cartItemsList">
+        <!-- Rendered by JS -->
+      </div>
+
+      <div class="cart-footer" id="cartFooter">
+        <div class="cart-summary-row">
+          <span>Qiimaha Cuntooyinka:</span>
+          <strong id="cartSubtotalText">$0.00</strong>
+        </div>
+        <div class="cart-summary-row">
+          <span>Cashuurta (Tax):</span>
+          <strong id="cartTaxText">$0.00</strong>
+        </div>
+        <div class="cart-summary-row">
+          <span>Kharashka Gaarsiinta:</span>
+          <strong id="cartDeliveryFeeText">$0.00</strong>
+        </div>
+        <div class="cart-summary-row cart-summary-total">
+          <span>Wadarta Guud:</span>
+          <strong id="cartTotalText" style="color: var(--gold);">$0.00</strong>
+        </div>
+
+        <div style="margin-top: 16px;">
+          <button class="btn btn-gold btn-lg" style="width: 100%;" id="checkoutBtn" onclick="app.openCheckoutModal()">
+            <i class="fa-solid fa-circle-check"></i> Dhammaystir Dalabka
+          </button>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+
+  <!-- ===================================================================
+       2. BOGGA MAAMULKA (ADMIN DASHBOARD MANAGEMENT SYSTEM)
+  =================================================================== -->
+  <div id="adminView" class="admin-view-wrapper">
+    <div class="admin-layout">
+      
+      <!-- Admin Sidebar -->
+      <aside class="admin-sidebar" id="adminSidebar">
+        
+        <div class="sidebar-header">
+          <div class="brand-logo">
+            <div class="logo-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="brand-title-wrap">
+              <div class="brand-name" style="font-size: 1.25rem;">SAVORA <span>ADMIN</span></div>
+              <div class="brand-tagline">Maamulka Maqaayadda</div>
+            </div>
+          </div>
+          <button class="sidebar-close-btn" id="sidebarCloseBtn" style="display: none; background: transparent; color: #fff; font-size: 1.2rem;">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- 10 Requested Navigation Sections -->
+        <nav class="sidebar-menu" id="sidebarMenu">
+          <a href="#" class="sidebar-link active" data-tab="overview">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>1. Guudmarka</span>
+          </a>
+          <a href="#" class="sidebar-link" data-tab="menu">
+            <i class="fa-solid fa-utensils"></i>
+            <span>2. Maamulka Cuntada</span>
+          </a>
+          <a href="#" class="sidebar-link" data-tab="orders">
+            <i class="fa-solid fa-receipt"></i>
+            <span>3. Dalabaadka</span>
+          </a>
+          <a href="#" class="sidebar-link" data-tab="reservations">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>4. Qabsashada Miisaska</span>
+          </a>
+          <a href="#" class="sidebar-link" data-tab="tables">
+            <i class="fa-solid fa-chair"></i>
+            <span>5. Miisaska Maqaayadda</span>
+          </a>
+          <a href="#" class="sidebar-link" data-tab="customers">
+            <i class="fa-solid fa-users"></i>
+            <span>6. Macaamiisha</span>
+          </a>
+          <a href="#" class="sidebar-link" data-tab="staff">
+            <i class="fa-solid fa-id-badge"></i>
+            <span>7. Shaqaalaha</span>
+          </a>
+          <a href="#" class="sidebar-link" data-tab="inventory">
+            <i class="fa-solid fa-boxes-stacked"></i>
+            <span>8. Kaydka Alaabta</span>
+          </a>
+          <a href="#" class="sidebar-link" data-tab="reports">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+            <span>9. Warbixinnada Iibka</span>
+          </a>
+          <a href="#" class="sidebar-link" data-tab="settings">
+            <i class="fa-solid fa-sliders"></i>
+            <span>10. Dejinta</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <button class="back-to-home-btn" id="backToHomeBtn">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>U noqo Bogga Hore</span>
+          </button>
+        </div>
+
+      </aside>
+
+      <!-- Admin Main Area -->
+      <main class="admin-main" id="adminMain">
+        
+        <!-- Topbar -->
+        <header class="admin-topbar">
+          <div class="topbar-left">
+            <button class="sidebar-toggle-btn" id="sidebarToggleBtn" title="Fur/Xir Sidebar-ka">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <h2 class="admin-page-title" id="adminPageTitle">Guudmarka Maamulka</h2>
+          </div>
+
+          <div class="topbar-right">
+            <!-- Live Somali Clock -->
+            <div class="clock-display" id="somaliClock">
+              <i class="fa-solid fa-clock"></i>
+              <span id="clockText">Soo raraya...</span>
+            </div>
+
+            <!-- Quick Add Order Button -->
+            <button class="btn btn-gold btn-sm" onclick="app.openOrderModal()">
+              <i class="fa-solid fa-plus"></i> Abuur Dalab Cusub
+            </button>
+
+            <!-- Dark Mode Toggle -->
+            <button class="btn-icon theme-toggle-btn" title="Beddel Muuqaalka">
+              <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <!-- User Pill -->
+            <div style="display: flex; align-items: center; gap: 8px; background: var(--bg-surface); padding: 5px 12px; border-radius: var(--radius-full); border: 1px solid var(--border);">
+              <i class="fa-solid fa-circle-user" style="color: var(--gold); font-size: 1.2rem;"></i>
+              <span style="font-weight: 700; font-size: 0.82rem;">Maamule Guud</span>
+            </div>
+          </div>
+        </header>
+
+        <!-- Admin Dynamic Body Content -->
+        <div class="admin-body">
+          
+          <!-- TAB 1: GUUDMARKA (OVERVIEW) -->
+          <div class="admin-tab-content active" id="tabContent-overview">
+            
+            <!-- 5 KPI Cards -->
+            <div class="admin-stats-grid">
+              
+              <div class="admin-stat-card">
+                <div class="admin-stat-icon stat-icon-green">
+                  <i class="fa-solid fa-receipt"></i>
+                </div>
+                <div class="admin-stat-info">
+                  <div class="admin-stat-label">Dalabaadka Maanta</div>
+                  <div class="admin-stat-value" id="kpiTodayOrders">0</div>
+                </div>
+              </div>
+
+              <div class="admin-stat-card">
+                <div class="admin-stat-icon stat-icon-gold">
+                  <i class="fa-solid fa-sack-dollar"></i>
+                </div>
+                <div class="admin-stat-info">
+                  <div class="admin-stat-label">Dakhliga Maanta</div>
+                  <div class="admin-stat-value" id="kpiTodayRevenue">$0.00</div>
+                </div>
+              </div>
+
+              <div class="admin-stat-card">
+                <div class="admin-stat-icon stat-icon-blue">
+                  <i class="fa-solid fa-users"></i>
+                </div>
+                <div class="admin-stat-info">
+                  <div class="admin-stat-label">Tirada Macaamiisha</div>
+                  <div class="admin-stat-value" id="kpiTotalCustomers">0</div>
+                </div>
+              </div>
+
+              <div class="admin-stat-card">
+                <div class="admin-stat-icon stat-icon-orange">
+                  <i class="fa-solid fa-chair"></i>
+                </div>
+                <div class="admin-stat-info">
+                  <div class="admin-stat-label">Miisaska Bannaan</div>
+                  <div class="admin-stat-value" id="kpiAvailableTables">0 / 0</div>
+                </div>
+              </div>
+
+              <div class="admin-stat-card">
+                <div class="admin-stat-icon stat-icon-red">
+                  <i class="fa-solid fa-hourglass-half"></i>
+                </div>
+                <div class="admin-stat-info">
+                  <div class="admin-stat-label">Dalabaadka Sugaya</div>
+                  <div class="admin-stat-value" id="kpiPendingOrders">0</div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- 2 Dynamic Charts: Sales / Revenue & Top Selling Items -->
+            <div class="charts-grid">
+              <div class="chart-card">
+                <div class="chart-header">
+                  <h3><i class="fa-solid fa-chart-simple" style="color: var(--primary);"></i> Jaantuska Dakhliga Maalmaha (Iibka)</h3>
+                  <span class="badge badge-gold">7-Dii Maalmood ee Ugu Dambaysay</span>
+                </div>
+                <div class="chart-canvas-wrap">
+                  <canvas id="revenueBarChart"></canvas>
+                </div>
+              </div>
+
+              <div class="chart-card">
+                <div class="chart-header">
+                  <h3><i class="fa-solid fa-chart-pie" style="color: var(--gold);"></i> Cuntooyinka Ugu Iibka Badan</h3>
+                  <span class="badge badge-success">Saamiga Iibka</span>
+                </div>
+                <div class="chart-canvas-wrap">
+                  <canvas id="topDishesChart"></canvas>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recent Orders & Inventory Alerts Row -->
+            <div style="display: grid; grid-template-columns: 1.6fr 1fr; gap: 24px;">
+              
+              <!-- Recent Orders Table -->
+              <div class="table-card">
+                <div class="table-header-bar">
+                  <h3><i class="fa-solid fa-clock-rotate-left"></i> Dalabaadkii Ugu Dambeeyey</h3>
+                  <button class="btn btn-sm btn-outline" onclick="app.switchTab('orders')">Eeg Dhammaan</button>
+                </div>
+                <div class="table-responsive">
+                  <table class="data-table">
+                    <thead>
+                      <tr>
+                        <th>Dalabka #</th>
+                        <th>Macmiilka</th>
+                        <th>Wadarta</th>
+                        <th>Xaaladda</th>
+                        <th>Falalka</th>
+                      </tr>
+                    </thead>
+                    <tbody id="overviewRecentOrdersTable">
+                      <!-- Rendered by JS -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Low Stock / Inventory Alerts -->
+              <div class="table-card">
+                <div class="table-header-bar">
+                  <h3><i class="fa-solid fa-triangle-exclamation" style="color: var(--danger);"></i> Digniinaha Kaydka</h3>
+                  <button class="btn btn-sm btn-outline" onclick="app.switchTab('inventory')">Kaydka</button>
+                </div>
+                <div style="padding: 18px;" id="overviewLowStockList">
+                  <!-- Rendered by JS -->
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- TAB 2: MAAMULKA CUNTADA (MENU MANAGEMENT) -->
+          <div class="admin-tab-content" id="tabContent-menu">
+            <div class="table-card">
+              <div class="table-header-bar">
+                <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap; flex: 1;">
+                  <div class="search-input-wrap" style="max-width: 320px;">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="adminMenuSearch" placeholder="Raadi cunto..." oninput="app.renderAdminMenuTable()">
+                  </div>
+                  <select id="adminMenuCategoryFilter" class="form-control" style="width: auto;" onchange="app.renderAdminMenuTable()">
+                    <option value="all">Dhammaan Qaybaha</option>
+                    <option value="quraac">Quraac</option>
+                    <option value="qado">Qado</option>
+                    <option value="casho">Casho</option>
+                    <option value="bariis-baasto">Bariis iyo Baasto</option>
+                    <option value="hilib-digaag">Hilib iyo Digaag</option>
+                    <option value="kalluun">Kalluun</option>
+                    <option value="burger-pizza">Burger iyo Pizza</option>
+                    <option value="cabitaanno">Cabitaanno</option>
+                    <option value="macmacaan">Macmacaan</option>
+                  </select>
+                </div>
+
+                <button class="btn btn-gold" onclick="app.openFoodModal()">
+                  <i class="fa-solid fa-plus"></i> Ku dar Cunto Cusub
+                </button>
+              </div>
+
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Sawirka</th>
+                      <th>Magaca Cuntada</th>
+                      <th>Qaybta</th>
+                      <th>Qiimaha</th>
+                      <th>Xaaladda</th>
+                      <th>Falalka</th>
+                    </tr>
+                  </thead>
+                  <tbody id="adminMenuTableBody">
+                    <!-- Populated by JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- TAB 3: DALABAADKA (ORDERS MANAGEMENT) -->
+          <div class="admin-tab-content" id="tabContent-orders">
+            <div class="table-card">
+              <div class="table-header-bar">
+                <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; flex: 1;">
+                  <div class="search-input-wrap" style="max-width: 300px;">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="adminOrderSearch" placeholder="Raadi lambar, macmiil..." oninput="app.renderOrdersTable()">
+                  </div>
+
+                  <!-- Status Filter Pills -->
+                  <div style="display: flex; gap: 6px; flex-wrap: wrap;" id="orderStatusFilterButtons">
+                    <button class="btn btn-sm btn-primary order-status-filter active" data-status="all">Dhammaan</button>
+                    <button class="btn btn-sm btn-outline order-status-filter" data-status="La sugayo">La sugayo</button>
+                    <button class="btn btn-sm btn-outline order-status-filter" data-status="La diyaarinayo">La diyaarinayo</button>
+                    <button class="btn btn-sm btn-outline order-status-filter" data-status="Diyaar ah">Diyaar ah</button>
+                    <button class="btn btn-sm btn-outline order-status-filter" data-status="La geeyey ama la dhiibay">La geeyey</button>
+                    <button class="btn btn-sm btn-outline order-status-filter" data-status="La baajiyey">La baajiyey</button>
+                  </div>
+                </div>
+
+                <button class="btn btn-gold" onclick="app.openOrderModal()">
+                  <i class="fa-solid fa-plus"></i> Abuur Dalab Cusub
+                </button>
+              </div>
+
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Lambar Dalab</th>
+                      <th>Macmiilka &amp; Telefoonka</th>
+                      <th>Cuntooyinka</th>
+                      <th>Wadarta</th>
+                      <th>Taariikhda &amp; Waqtiga</th>
+                      <th>Habka Lacagta</th>
+                      <th>Xaaladda</th>
+                      <th>Falalka</th>
+                    </tr>
+                  </thead>
+                  <tbody id="adminOrdersTableBody">
+                    <!-- Populated by JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- TAB 4: QABSASHADA MIISASKA (RESERVATIONS MANAGEMENT) -->
+          <div class="admin-tab-content" id="tabContent-reservations">
+            <div class="table-card">
+              <div class="table-header-bar">
+                <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap; flex: 1;">
+                  <div class="search-input-wrap" style="max-width: 280px;">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="adminResSearch" placeholder="Raadi macmiil ama miis..." oninput="app.renderReservationsTable()">
+                  </div>
+                  <input type="date" id="adminResDateFilter" class="form-control" style="width: auto;" onchange="app.renderReservationsTable()">
+                </div>
+
+                <button class="btn btn-gold" onclick="app.openReservationModal()">
+                  <i class="fa-solid fa-plus"></i> Qabso Miis Cusub
+                </button>
+              </div>
+
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Macmiilka</th>
+                      <th>Telefoonka</th>
+                      <th>Dadka</th>
+                      <th>Miiska</th>
+                      <th>Taariikhda</th>
+                      <th>Waqtiga</th>
+                      <th>Xaaladda</th>
+                      <th>Falalka</th>
+                    </tr>
+                  </thead>
+                  <tbody id="adminReservationsTableBody">
+                    <!-- Populated by JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- TAB 5: MIISASKA MAQAAYADDA (TABLES FLOOR PLAN) -->
+          <div class="admin-tab-content" id="tabContent-tables">
+            <div class="table-card" style="padding: 24px;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; flex-wrap: wrap; gap: 14px;">
+                <div>
+                  <h3 style="font-size: 1.3rem;">Kuraasta iyo Miisaska Maqaayadda Savora</h3>
+                  <p style="color: var(--text-muted); font-size: 0.9rem;">Taabo miis kasta si aad u beddesho xaaladdiisa ama u aragto macmiilka fadhiya.</p>
+                </div>
+                <div style="display: flex; gap: 16px; align-items: center;">
+                  <span class="badge badge-success"><i class="fa-solid fa-circle"></i> Bannaan</span>
+                  <span class="badge badge-gold"><i class="fa-solid fa-circle"></i> La Qabsaday</span>
+                  <span class="badge badge-danger"><i class="fa-solid fa-circle"></i> Macaamiil baa fadhiya</span>
+                  <button class="btn btn-gold btn-sm" onclick="app.openNewTablePrompt()">
+                    <i class="fa-solid fa-plus"></i> Ku dar Miis Cusub
+                  </button>
+                </div>
+              </div>
+
+              <!-- Floor Plan Grid -->
+              <div class="tables-floor-grid" id="tablesFloorGrid">
+                <!-- Rendered by JS -->
+              </div>
+            </div>
+          </div>
+
+
+          <!-- TAB 6: MACAAMIISHA (CUSTOMERS MANAGEMENT) -->
+          <div class="admin-tab-content" id="tabContent-customers">
+            <div class="table-card">
+              <div class="table-header-bar">
+                <div class="search-input-wrap" style="max-width: 320px;">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <input type="text" id="adminCustomerSearch" placeholder="Raadi macmiil ama telefoon..." oninput="app.renderCustomersTable()">
+                </div>
+
+                <button class="btn btn-gold" onclick="app.openCustomerModal()">
+                  <i class="fa-solid fa-user-plus"></i> Ku dar Macmiil Cusub
+                </button>
+              </div>
+
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Magaca Macmiilka</th>
+                      <th>Telefoonka</th>
+                      <th>Tirada Dalabaadka</th>
+                      <th>Wadarta Lacagta uu Bixiyey</th>
+                      <th>Dalabkii Ugu Dambeeyey</th>
+                      <th>Xaaladda</th>
+                      <th>Falalka</th>
+                    </tr>
+                  </thead>
+                  <tbody id="adminCustomersTableBody">
+                    <!-- Populated by JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- TAB 7: SHAQAALAHA (STAFF MANAGEMENT) -->
+          <div class="admin-tab-content" id="tabContent-staff">
+            <div class="table-card">
+              <div class="table-header-bar">
+                <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap; flex: 1;">
+                  <div class="search-input-wrap" style="max-width: 300px;">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="adminStaffSearch" placeholder="Raadi shaqaale..." oninput="app.renderStaffTable()">
+                  </div>
+                  <select id="adminStaffRoleFilter" class="form-control" style="width: auto;" onchange="app.renderStaffTable()">
+                    <option value="all">Dhammaan Shaqooyinka</option>
+                    <option value="Maamule">Maamule</option>
+                    <option value="Madaxa Kushiinka (Chef)">Madaxa Kushiinka (Chef)</option>
+                    <option value="Kabariye (Waiter)">Kabariye (Waiter)</option>
+                    <option value="Qasnaji (Cashier)">Qasnaji (Cashier)</option>
+                    <option value="Gaarsiye (Delivery)">Gaarsiye (Delivery)</option>
+                    <option value="Nadiifiye">Nadiifiye</option>
+                  </select>
+                </div>
+
+                <button class="btn btn-gold" onclick="app.openStaffModal()">
+                  <i class="fa-solid fa-user-tie"></i> Ku dar Shaqaale Cusub
+                </button>
+              </div>
+
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Magaca Shaqaalaha</th>
+                      <th>Shaqada uu Hayo</th>
+                      <th>Telefoonka</th>
+                      <th>Mushaharka</th>
+                      <th>Taariikhda Bilaabay</th>
+                      <th>Xaaladda</th>
+                      <th>Falalka</th>
+                    </tr>
+                  </thead>
+                  <tbody id="adminStaffTableBody">
+                    <!-- Populated by JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- TAB 8: KAYDKA ALAABTA (INVENTORY MANAGEMENT) -->
+          <div class="admin-tab-content" id="tabContent-inventory">
+            <div class="table-card">
+              <div class="table-header-bar">
+                <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap; flex: 1;">
+                  <div class="search-input-wrap" style="max-width: 300px;">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="adminInventorySearch" placeholder="Raadi alaabta kaydka..." oninput="app.renderInventoryTable()">
+                  </div>
+                  <select id="adminInventoryCategoryFilter" class="form-control" style="width: auto;" onchange="app.renderInventoryTable()">
+                    <option value="all">Dhammaan Qaybaha</option>
+                    <option value="Hilib & Digaag">Hilib &amp; Digaag</option>
+                    <option value="Bariis & Bur">Bariis &amp; Bur</option>
+                    <option value="Khudaar & Miro">Khudaar &amp; Miro</option>
+                    <option value="Saliid & Xawaash">Saliid &amp; Xawaash</option>
+                    <option value="Cabitaanno">Cabitaanno</option>
+                    <option value="Nadiifin & Qalab">Nadiifin &amp; Qalab</option>
+                  </select>
+                </div>
+
+                <button class="btn btn-gold" onclick="app.openInventoryModal()">
+                  <i class="fa-solid fa-box-open"></i> Ku dar Alaab Cusub
+                </button>
+              </div>
+
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Magaca Alaabta</th>
+                      <th>Qaybta</th>
+                      <th>Tirada Hadda</th>
+                      <th>Halbeegga</th>
+                      <th>Qiimaha Halbeegga</th>
+                      <th>Xaaladda Kaydka</th>
+                      <th>Kordhi / Yaree</th>
+                      <th>Falalka</th>
+                    </tr>
+                  </thead>
+                  <tbody id="adminInventoryTableBody">
+                    <!-- Populated by JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- TAB 9: WARBIXINNADA IIBKA (SALES REPORTS) -->
+          <div class="admin-tab-content" id="tabContent-reports">
+            
+            <!-- Controls & Print Button -->
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; flex-wrap: wrap; gap: 14px;">
+              <div style="display: flex; gap: 10px; align-items: center;">
+                <label style="font-weight: 700; font-size: 0.9rem;">Muddada Warbixinta:</label>
+                <select id="reportsTimeFilter" class="form-control" style="width: auto;" onchange="app.renderReports()">
+                  <option value="today">Iibka Maanta</option>
+                  <option value="week" selected>Iibka Toddobaadkan</option>
+                  <option value="month">Iibka Bishan</option>
+                  <option value="all">Dhammaan Dakhliga</option>
+                </select>
+              </div>
+
+              <button class="btn btn-gold" onclick="app.printSalesReport()">
+                <i class="fa-solid fa-print"></i> Daabac Warbixinta Iibka
+              </button>
+            </div>
+
+            <!-- KPI Cards for Reports -->
+            <div class="admin-stats-grid">
+              <div class="admin-stat-card">
+                <div class="admin-stat-icon stat-icon-gold"><i class="fa-solid fa-money-bill-wave"></i></div>
+                <div class="admin-stat-info">
+                  <div class="admin-stat-label">Wadarta Iibka Muddadan</div>
+                  <div class="admin-stat-value" id="repTotalRevenue">$0.00</div>
+                </div>
+              </div>
+
+              <div class="admin-stat-card">
+                <div class="admin-stat-icon stat-icon-green"><i class="fa-solid fa-bag-shopping"></i></div>
+                <div class="admin-stat-info">
+                  <div class="admin-stat-label">Dalabaadka La Dhammaystiray</div>
+                  <div class="admin-stat-value" id="repCompletedOrders">0</div>
+                </div>
+              </div>
+
+              <div class="admin-stat-card">
+                <div class="admin-stat-icon stat-icon-red"><i class="fa-solid fa-ban"></i></div>
+                <div class="admin-stat-info">
+                  <div class="admin-stat-label">Dalabaadka La Baajiyey</div>
+                  <div class="admin-stat-value" id="repCancelledOrders">0</div>
+                </div>
+              </div>
+
+              <div class="admin-stat-card">
+                <div class="admin-stat-icon stat-icon-blue"><i class="fa-solid fa-chart-line"></i></div>
+                <div class="admin-stat-info">
+                  <div class="admin-stat-label">Celceliska Qiimaha Dalabka</div>
+                  <div class="admin-stat-value" id="repAvgOrderValue">$0.00</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Report Breakdown Table -->
+            <div class="table-card">
+              <div class="table-header-bar">
+                <h3><i class="fa-solid fa-list-check"></i> Faahfaahinta Dakhliga ee Cuntooyinka La Iibiyey</h3>
+              </div>
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Cuntada</th>
+                      <th>Tirada La Iibiyey</th>
+                      <th>Qiimaha Halbeegga</th>
+                      <th>Wadarta Dakhliga</th>
+                    </tr>
+                  </thead>
+                  <tbody id="reportsBreakdownTableBody">
+                    <!-- Populated by JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+
+
+          <!-- TAB 10: DEJINTA (SETTINGS) -->
+          <div class="admin-tab-content" id="tabContent-settings">
+            <div class="table-card" style="padding: 30px;">
+              <h3 style="font-size: 1.3rem; margin-bottom: 20px;">Dejinta Guud ee Nidaamka Savora</h3>
+              
+              <form id="settingsForm" onsubmit="event.preventDefault(); app.saveSettings();">
+                <div class="form-grid">
+                  
+                  <div class="form-group">
+                    <label>Magaca Maqaayadda</label>
+                    <input type="text" id="setRestName" class="form-control" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Telefoonka Xiriirka</label>
+                    <input type="text" id="setRestPhone" class="form-control" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Cinwaanka Goobta</label>
+                    <input type="text" id="setRestAddress" class="form-control" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Email-ka</label>
+                    <input type="email" id="setRestEmail" class="form-control" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Saacadaha Shaqada</label>
+                    <input type="text" id="setRestHours" class="form-control" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Calaamadda Lacagta (Currency)</label>
+                    <input type="text" id="setCurrencySymbol" class="form-control" value="$" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Cashuurta / Tax Rate (%)</label>
+                    <input type="number" id="setTaxRate" class="form-control" min="0" max="100" step="0.5" value="5" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Kharashka Gaarsiinta ($)</label>
+                    <input type="number" id="setDeliveryFee" class="form-control" min="0" step="0.5" value="2.00" required>
+                  </div>
+
+                </div>
+
+                <div style="display: flex; gap: 14px; margin-top: 14px; flex-wrap: wrap;">
+                  <button type="submit" class="btn btn-gold btn-lg">
+                    <i class="fa-solid fa-floppy-disk"></i> Kaydi Dejinta Cusub
+                  </button>
+                  <button type="button" class="btn btn-outline-gold" onclick="app.resetToDefaultData()">
+                    <i class="fa-solid fa-rotate-left"></i> Dib u soo celi Xogtii Asalka Ahayd (Reset)
+                  </button>
+                  <button type="button" class="btn btn-outline" onclick="app.exportDataJSON()">
+                    <i class="fa-solid fa-download"></i> Soo Dejiso Kaydka (Export JSON)
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </main>
+
+    </div>
+  </div>
+
+
+  <!-- ===================================================================
+       3. MODAL-YADA GUUD (MODAL WINDOWS)
+  =================================================================== -->
+  
+  <!-- Food Modal (Add / Edit Dish) -->
+  <div class="modal-overlay" id="foodModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="foodModalTitle">Ku dar Cunto Cusub</h3>
+        <button class="cart-close-btn" onclick="app.closeModal('foodModal')"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form id="foodForm" onsubmit="event.preventDefault(); app.saveFoodItem();">
+        <div class="modal-body">
+          <input type="hidden" id="foodItemId">
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label>Magaca Cuntada *</label>
+            <input type="text" id="foodItemName" class="form-control" placeholder="Tusaale: Bariis iyo Hilib Ari" required>
+          </div>
+          
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Qaybta Cuntada *</label>
+              <select id="foodItemCategory" class="form-control" required>
+                <option value="quraac">Quraac</option>
+                <option value="qado">Qado</option>
+                <option value="casho">Casho</option>
+                <option value="bariis-baasto">Bariis iyo Baasto</option>
+                <option value="hilib-digaag">Hilib iyo Digaag</option>
+                <option value="kalluun">Kalluun</option>
+                <option value="burger-pizza">Burger iyo Pizza</option>
+                <option value="cabitaanno">Cabitaanno</option>
+                <option value="macmacaan">Macmacaan</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Qiimaha ($) *</label>
+              <input type="number" id="foodItemPrice" class="form-control" step="0.01" min="0" placeholder="9.50" required>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label>Sawirka Cuntada (Dooro sawir diyaarsan ama geli link) *</label>
+            <select id="foodItemImagePreset" class="form-control" onchange="app.handleImagePresetChange()" style="margin-bottom: 8px;">
+              <option value="assets/images/bariis-hilib.jpg">Bariis iyo Hilib</option>
+              <option value="assets/images/bariis-digaag.jpg">Bariis iyo Digaag</option>
+              <option value="assets/images/baasto-bolognese.jpg">Baasto Suugo Leh</option>
+              <option value="assets/images/baasto-alfredo.jpg">Baasto Alfredo (Cad)</option>
+              <option value="assets/images/pizza-supreme.jpg">Pizza Supreme</option>
+              <option value="assets/images/pizza-chicken.jpg">Pizza Digaag</option>
+              <option value="assets/images/burger-beef.jpg">Burger Hilib Lo'aad</option>
+              <option value="assets/images/burger-chicken.jpg">Burger Digaag Qallalan</option>
+              <option value="assets/images/kalluun-duban.jpg">Kalluun Duban</option>
+              <option value="assets/images/digaag-duban.jpg">Digaag Duban</option>
+              <option value="assets/images/hilib-ari.jpg">Hilib Ari Duban</option>
+              <option value="assets/images/hilib-steak.jpg">Hilib Steak Duban</option>
+              <option value="assets/images/quraac-canjeero.jpg">Quraac Canjeero &amp; Suqaar</option>
+              <option value="assets/images/cabitaan-cambe.jpg">Cabitaan Cambe</option>
+              <option value="assets/images/cabitaan-liin.jpg">Cabitaan Liin &amp; Naanaac</option>
+              <option value="assets/images/shaah-somali.jpg">Shaah Cadays Xawaash leh</option>
+              <option value="assets/images/macmacaan-cake.jpg">Keeg Shukulaato</option>
+              <option value="assets/images/macmacaan-halwa.jpg">Xalwo Soomaali</option>
+              <option value="assets/images/macmacaan-icecream.jpg">Jalaato Ice Cream</option>
+              <option value="custom">Geli URL Gaar Ah...</option>
+            </select>
+            <input type="text" id="foodItemImage" class="form-control" placeholder="assets/images/..." required>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label>Sharaxaad Kooban *</label>
+            <textarea id="foodItemDesc" class="form-control" rows="2" placeholder="Sharaxaad kooban oo ku saabsan cuntadan..." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Xaaladda Cuntada *</label>
+            <select id="foodItemStatus" class="form-control" required>
+              <option value="available">La heli karo (Available)</option>
+              <option value="unavailable">Waa dhammaatay (Out of Stock)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="app.closeModal('foodModal')">Baaji</button>
+          <button type="submit" class="btn btn-gold"><i class="fa-solid fa-floppy-disk"></i> Kaydi Cuntada</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Order Modal (Abuur / Beddel Dalab) -->
+  <div class="modal-overlay" id="orderModal">
+    <div class="modal-box" style="max-width: 700px;">
+      <div class="modal-header">
+        <h3 id="orderModalTitle">Abuur Dalab Cusub</h3>
+        <button class="cart-close-btn" onclick="app.closeModal('orderModal')"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form id="orderForm" onsubmit="event.preventDefault(); app.saveOrder();">
+        <div class="modal-body">
+          <input type="hidden" id="orderEditId">
+          
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Magaca Macmiilka *</label>
+              <input type="text" id="orderCustName" class="form-control" placeholder="Tusaale: Faarax Cali" required>
+            </div>
+            <div class="form-group">
+              <label>Telefoonka *</label>
+              <input type="tel" id="orderCustPhone" class="form-control" placeholder="+252 61 555 4321" required>
+            </div>
+            <div class="form-group">
+              <label>Nooca Dalabka *</label>
+              <select id="orderType" class="form-control" onchange="app.handleOrderTypeChange()">
+                <option value="dine-in">Goobta / Miiska (Dine-In)</option>
+                <option value="delivery">Gaarsiinta Guriga (Delivery)</option>
+                <option value="takeaway">Qaadasho (Takeaway)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label id="orderLocationLabel">Dooro Miiska *</label>
+              <select id="orderTableSelect" class="form-control">
+                <!-- Populated by JS -->
+              </select>
+              <input type="text" id="orderAddressInput" class="form-control" style="display: none;" placeholder="Cinwaanka guriga ama goobta shaqada">
+            </div>
+          </div>
+
+          <!-- Select Dishes Container -->
+          <div style="margin-top: 14px;">
+            <label style="font-weight: 700; font-size: 0.9rem; margin-bottom: 8px; display: block;">Dooro Cuntooyinka La Dalbanayo:</label>
+            <div id="orderItemsPicker" style="max-height: 200px; overflow-y: auto; border: 1.5px solid var(--border); border-radius: var(--radius-md); padding: 10px; background: var(--bg-body);">
+              <!-- Checkboxes rendered by JS -->
+            </div>
+          </div>
+
+          <div class="form-grid" style="margin-top: 16px;">
+            <div class="form-group">
+              <label>Habka Lacag Bixinta *</label>
+              <select id="orderPaymentMethod" class="form-control" required>
+                <option value="Kaash (Cash)">Kaash (Cash)</option>
+                <option value="EVC Plus">EVC Plus</option>
+                <option value="Zaad Service">Zaad Service</option>
+                <option value="Sahal">Sahal</option>
+                <option value="Kaarka Bangiga (Card)">Kaarka Bangiga (Card)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Xaaladda Dalabka *</label>
+              <select id="orderStatusSelect" class="form-control" required>
+                <option value="La sugayo">La sugayo</option>
+                <option value="La diyaarinayo">La diyaarinayo</option>
+                <option value="Diyaar ah">Diyaar ah</option>
+                <option value="La geeyey ama la dhiibay">La geeyey ama la dhiibay</option>
+                <option value="La baajiyey">La baajiyey</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="background: var(--bg-card-subtle); padding: 14px; border-radius: var(--radius-md); border: 1px dashed var(--border); margin-top: 14px; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-weight: 700;">Wadarta Lacagta La Xisaabiyey:</span>
+            <span style="font-size: 1.4rem; font-weight: 800; color: var(--gold);" id="orderTotalPreview">$0.00</span>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="app.closeModal('orderModal')">Baaji</button>
+          <button type="submit" class="btn btn-gold"><i class="fa-solid fa-check"></i> Kaydi Dalabka</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Customer Checkout Modal (Bogga Dalbashada Macmiilka) -->
+  <div class="modal-overlay" id="checkoutModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-bag-shopping" style="color: var(--gold);"></i> Xaqiiji Dalabkaaga Savora</h3>
+        <button class="cart-close-btn" onclick="app.closeModal('checkoutModal')"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form id="publicCheckoutForm" onsubmit="event.preventDefault(); app.processCustomerCheckout();">
+        <div class="modal-body">
+          <div class="form-group" style="margin-bottom: 12px;">
+            <label><i class="fa-solid fa-user"></i> Magacaaga oo Buuxa *</label>
+            <input type="text" id="chkCustName" class="form-control" placeholder="Tusaale: Faarax Cali" required>
+          </div>
+          <div class="form-group" style="margin-bottom: 12px;">
+            <label><i class="fa-solid fa-phone"></i> Lambarka Telefoonka *</label>
+            <input type="tel" id="chkCustPhone" class="form-control" placeholder="Tusaale: +252 61 555 4321" required>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label><i class="fa-solid fa-truck"></i> Nooca Dalabka</label>
+              <select id="chkOrderType" class="form-control" onchange="app.handleCheckoutTypeChange()">
+                <option value="dine-in">Miiska Goobta (Dine-In)</option>
+                <option value="delivery" selected>Gaarsiin Guriga (Delivery)</option>
+                <option value="takeaway">Qaadasho (Takeaway)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label id="chkLocationLabel"><i class="fa-solid fa-location-dot"></i> Cinwaanka / Miiska *</label>
+              <input type="text" id="chkLocationInput" class="form-control" placeholder="Xaafadda, Wadada, Guriga..." required>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-top: 12px;">
+            <label><i class="fa-solid fa-wallet"></i> Habka Lacag Bixinta *</label>
+            <select id="chkPaymentMethod" class="form-control" required>
+              <option value="Kaash (Cash)">Kaash (Marka cuntadu timaado)</option>
+              <option value="EVC Plus">EVC Plus (*712*...)</option>
+              <option value="Zaad Service">Zaad Service (*880*...)</option>
+              <option value="Sahal">Sahal (*888*...)</option>
+              <option value="Kaarka Bangiga (Card)">Kaarka Bangiga (Credit/Debit Card)</option>
+            </select>
+          </div>
+
+          <div style="background: var(--bg-surface); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border); margin-top: 16px;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 6px;">
+              <span>Wadarta Dalabka:</span>
+              <strong id="chkTotalAmountText" style="color: var(--gold); font-size: 1.25rem;">$0.00</strong>
+            </div>
+            <p style="font-size: 0.78rem; color: var(--text-muted);">Dalabkaagu wuxuu si toos ah u gaarayaa maamulka iyo kushiinka si degdeg ah loogu diyaariyo.</p>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="app.closeModal('checkoutModal')">Baaji</button>
+          <button type="submit" class="btn btn-gold btn-lg"><i class="fa-solid fa-paper-plane"></i> Dir Dalabka Hadda</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Reservation Modal (Admin Add/Edit Reservation) -->
+  <div class="modal-overlay" id="resModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="resModalTitle">Qabso Miis Cusub</h3>
+        <button class="cart-close-btn" onclick="app.closeModal('resModal')"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form id="adminResForm" onsubmit="event.preventDefault(); app.saveAdminReservation();">
+        <div class="modal-body">
+          <input type="hidden" id="adminResEditId">
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Magaca Macmiilka *</label>
+              <input type="text" id="adminResCustName" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label>Telefoonka *</label>
+              <input type="tel" id="adminResCustPhone" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label>Tirada Dadka *</label>
+              <input type="number" id="adminResGuests" class="form-control" min="1" max="30" value="2" required>
+            </div>
+            <div class="form-group">
+              <label>Dooro Miiska *</label>
+              <select id="adminResTableSelect" class="form-control" required>
+                <!-- Rendered by JS -->
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Taariikhda *</label>
+              <input type="date" id="adminResDate" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label>Waqtiga *</label>
+              <input type="time" id="adminResTime" class="form-control" value="13:00" required>
+            </div>
+          </div>
+          <div class="form-group" style="margin-top: 12px;">
+            <label>Xaaladda Qabsashada *</label>
+            <select id="adminResStatus" class="form-control" required>
+              <option value="La xaqiijiyey">La xaqiijiyey</option>
+              <option value="La sugayo">La sugayo</option>
+              <option value="La dhammaystiray">La dhammaystiray</option>
+              <option value="La baajiyey">La baajiyey</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="app.closeModal('resModal')">Baaji</button>
+          <button type="submit" class="btn btn-gold">Kaydi Qabsashada</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Customer Modal (Add / Edit Customer) -->
+  <div class="modal-overlay" id="customerModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="customerModalTitle">Ku dar Macmiil Cusub</h3>
+        <button class="cart-close-btn" onclick="app.closeModal('customerModal')"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form id="customerForm" onsubmit="event.preventDefault(); app.saveCustomer();">
+        <div class="modal-body">
+          <input type="hidden" id="custEditId">
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label>Magaca Macmiilka *</label>
+            <input type="text" id="custNameInput" class="form-control" placeholder="Faarax Cali" required>
+          </div>
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label>Lambarka Telefoonka *</label>
+            <input type="tel" id="custPhoneInput" class="form-control" placeholder="+252 61 555 4321" required>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Tirada Dalabaadka</label>
+              <input type="number" id="custOrdersCountInput" class="form-control" min="0" value="1">
+            </div>
+            <div class="form-group">
+              <label>Wadarta Lacagta uu Bixiyey ($)</label>
+              <input type="number" id="custTotalSpentInput" class="form-control" min="0" step="0.5" value="15.00">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="app.closeModal('customerModal')">Baaji</button>
+          <button type="submit" class="btn btn-gold">Kaydi Macmiilka</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Staff Modal (Add / Edit Staff) -->
+  <div class="modal-overlay" id="staffModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="staffModalTitle">Ku dar Shaqaale Cusub</h3>
+        <button class="cart-close-btn" onclick="app.closeModal('staffModal')"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form id="staffForm" onsubmit="event.preventDefault(); app.saveStaff();">
+        <div class="modal-body">
+          <input type="hidden" id="staffEditId">
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label>Magaca Shaqaalaha *</label>
+            <input type="text" id="staffNameInput" class="form-control" placeholder="Tusaale: Jaamac Xuseen" required>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Shaqada uu Hayo *</label>
+              <select id="staffRoleInput" class="form-control" required>
+                <option value="Maamule">Maamule</option>
+                <option value="Madaxa Kushiinka (Chef)">Madaxa Kushiinka (Chef)</option>
+                <option value="Kabariye (Waiter)">Kabariye (Waiter)</option>
+                <option value="Qasnaji (Cashier)">Qasnaji (Cashier)</option>
+                <option value="Gaarsiye (Delivery)">Gaarsiye (Delivery)</option>
+                <option value="Nadiifiye">Nadiifiye</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Telefoonka *</label>
+              <input type="tel" id="staffPhoneInput" class="form-control" placeholder="+252 61 777 8899" required>
+            </div>
+            <div class="form-group">
+              <label>Mushaharka Bishii ($) *</label>
+              <input type="number" id="staffSalaryInput" class="form-control" min="0" placeholder="350" required>
+            </div>
+            <div class="form-group">
+              <label>Taariikhda uu Bilaabay *</label>
+              <input type="date" id="staffStartDateInput" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-group" style="margin-top: 14px;">
+            <label>Xaaladda Shaqada *</label>
+            <select id="staffStatusInput" class="form-control" required>
+              <option value="Shaqaynaya">Shaqaynaya (Active)</option>
+              <option value="Fasax ku maqan">Fasax ku maqan (On Leave)</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="app.closeModal('staffModal')">Baaji</button>
+          <button type="submit" class="btn btn-gold">Kaydi Shaqaalaha</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Inventory Modal (Add / Edit Stock Item) -->
+  <div class="modal-overlay" id="inventoryModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="inventoryModalTitle">Ku dar Alaab Cusub Kaydka</h3>
+        <button class="cart-close-btn" onclick="app.closeModal('inventoryModal')"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form id="inventoryForm" onsubmit="event.preventDefault(); app.saveInventory();">
+        <div class="modal-body">
+          <input type="hidden" id="invEditId">
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label>Magaca Alaabta *</label>
+            <input type="text" id="invNameInput" class="form-control" placeholder="Tusaale: Bariis Basmati" required>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Qaybta *</label>
+              <select id="invCategoryInput" class="form-control" required>
+                <option value="Hilib & Digaag">Hilib &amp; Digaag</option>
+                <option value="Bariis & Bur">Bariis &amp; Bur</option>
+                <option value="Khudaar & Miro">Khudaar &amp; Miro</option>
+                <option value="Saliid & Xawaash">Saliid &amp; Xawaash</option>
+                <option value="Cabitaanno">Cabitaanno</option>
+                <option value="Nadiifin & Qalab">Nadiifin &amp; Qalab</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Halbeegga *</label>
+              <select id="invUnitInput" class="form-control" required>
+                <option value="Kiilo (kg)">Kiilo (kg)</option>
+                <option value="Litir (L)">Litir (L)</option>
+                <option value="Xabbo (pcs)">Xabbo (pcs)</option>
+                <option value="Kiish">Kiish</option>
+                <option value="Kartoon">Kartoon</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Tirada Kaydka *</label>
+              <input type="number" id="invQuantityInput" class="form-control" min="0" step="0.5" placeholder="50" required>
+            </div>
+            <div class="form-group">
+              <label>Qiimaha Halbeegga ($) *</label>
+              <input type="number" id="invPriceInput" class="form-control" min="0" step="0.01" placeholder="2.50" required>
+            </div>
+          </div>
+          <div class="form-group" style="margin-top: 14px;">
+            <label>Xadka Digniinta (Min Threshold - Marka uu hoos uga dhaco digniin bixi) *</label>
+            <input type="number" id="invThresholdInput" class="form-control" min="1" value="10" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="app.closeModal('inventoryModal')">Baaji</button>
+          <button type="submit" class="btn btn-gold">Kaydi Alaabta</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Receipt & Bill Modal (Rasiidka Dalabka oo La Daabacan Karo) -->
+  <div class="modal-overlay" id="receiptModal">
+    <div class="modal-box" style="max-width: 500px;">
+      <div class="modal-header no-print">
+        <h3><i class="fa-solid fa-receipt" style="color: var(--gold);"></i> Rasiidka Dalabka</h3>
+        <button class="cart-close-btn" onclick="app.closeModal('receiptModal')"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body printable-area" id="receiptPrintArea" style="font-family: 'Plus Jakarta Sans', monospace; padding: 24px;">
+        <!-- Populated dynamically by JS -->
+      </div>
+      <div class="modal-footer no-print">
+        <button type="button" class="btn btn-outline" onclick="app.closeModal('receiptModal')">Xir</button>
+        <button type="button" class="btn btn-gold" onclick="window.print()">
+          <i class="fa-solid fa-print"></i> Daabac Rasiidka
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Local Script Dependencies -->
+  <script src="assets/chart.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
